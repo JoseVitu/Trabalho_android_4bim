@@ -33,7 +33,7 @@ public class PartidosListActivity extends AppCompatActivity {
     private List<PartidoDTO> partidoDTOList;
     private Button btnListarPartidos;
     private EditText etPesquisarPartidos;
-    private List<PartidoDTO> partidoDTOListOriginal = new ArrayList<>(); // Corrigir o nome da variável
+    private List<PartidoDTO> partidoDTOListOriginal = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,13 +44,13 @@ public class PartidosListActivity extends AppCompatActivity {
         btnListarPartidos = findViewById(R.id.btnListarPartidos);
         etPesquisarPartidos = findViewById(R.id.etPesquisarPartidos);
 
-        // Configuração inicial do RecyclerView
+
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         partidoDTOList = new ArrayList<>();
         partidoAdapter = new PartidoAdapter(partidoDTOList);
         recyclerView.setAdapter(partidoAdapter);
 
-        // Configuração do botão "Listar Partidos"
+
         btnListarPartidos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -117,7 +117,7 @@ public class PartidosListActivity extends AppCompatActivity {
             }
         }
 
-        partidoDTOList.clear(); // Limpe a lista atual antes de adicionar os filtrados
+        partidoDTOList.clear();
         partidoDTOList.addAll(filteredList);
         partidoAdapter.notifyDataSetChanged();
     }
